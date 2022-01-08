@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cbIsDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="11"
+        android:layout_marginEnd="10dp"
+        android:textSize="17sp"
+        android:layout_gravity="center"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:text="@string/item_text"/>
+
+
+</LinearLayout>
+
+<!--
+<item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
+
+-->
