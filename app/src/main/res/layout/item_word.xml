@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -36,16 +37,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 />
-
-            <ImageButton
-                android:id="@+id/btnBorrar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_baseline_delete_24"
-                android:background="#F4F2F2"
-                />
-
 
         </LinearLayout>
 

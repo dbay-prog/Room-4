@@ -41,13 +41,14 @@ class TaskAdapter(
             }
         }
 
-
         fun bind(task: TaskEntity){
             currentTask = task
             currentCheck = task
             binding.tvTask.text = task.name
             binding.cbIsDone.isChecked = task.isDOne
         }
+
+
 
     }
 

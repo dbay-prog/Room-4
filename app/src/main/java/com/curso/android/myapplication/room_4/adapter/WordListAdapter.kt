@@ -10,17 +10,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.curso.android.myapplication.room_2.database.WordEntity
 import com.curso.android.myapplication.room_4.R
 import com.curso.android.myapplication.room_4.databinding.ItemWordBinding
+import com.curso.android.myapplication.room_4.ui.home.OnItemClickListener
 
-class WordListAdapter:ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(WordsComparator()) {
+class WordListAdapter internal constructor(private val listener: OnItemClickListener):ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(WordsComparator()) {
 
-    class WordViewHolder(view:View):RecyclerView.ViewHolder(view) {
+    inner class WordViewHolder(view:View):RecyclerView.ViewHolder(view) {
         val binding = ItemWordBinding.bind(view)
 
         fun bind(word:WordEntity){
             binding.tvWord.text = word.word
             binding.tvFecha.text = word.fecha
             //binding.tvNumHoras.text = word.hours
+        }
 
+        fun setListener(word: WordEntity){
+            binding.containerMain.setOnClickListener{
+                listener.onItemClick(word)
+            }
+            binding.containerMain.setOnLongClickListener {
+                listener.onLongItemClick(word)
+                true
+            }
         }
     }
 
@@ -35,6 +45,7 @@ class WordListAdapter:ListAdapter<WordEntity, WordListAdapter.WordViewHolder>(Wo
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current)
+        holder.setListener(current)
     }
 }
 

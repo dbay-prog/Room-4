@@ -1,9 +1,11 @@
 package com.curso.android.myapplication.room_4.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -16,7 +18,7 @@ import com.curso.android.myapplication.room_4.utils.InjectorUtils
 import java.lang.StringBuilder
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     // This property is only valid between onCreateView and
@@ -59,8 +61,9 @@ class HomeFragment : Fragment() {
             //Log.d("TAG","$words")
         }
 
+        Log.d("TAG","Configuracion Recycler")
         mRecyclerView = binding.rvContainer
-        mAdapter = WordListAdapter()
+        mAdapter = WordListAdapter(this)
         mRecyclerView.adapter = mAdapter
         mRecyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -76,5 +79,21 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(word: WordEntity) {
+        Log.d("TAG", "Pulso corto")
+        Toast.makeText(activity,word.fecha,Toast.LENGTH_SHORT).show()
+
+    }
+
+    override fun onLongItemClick(word: WordEntity) {
+        Log.d("TAG", "Pulso Largo")
+        Toast.makeText(activity,word.fecha,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("TAG","OonREsume")
     }
 }
