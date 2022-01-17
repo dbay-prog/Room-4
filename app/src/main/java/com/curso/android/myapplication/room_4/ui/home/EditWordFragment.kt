@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.curso.android.myapplication.room_4.R
 import com.curso.android.myapplication.room_4.databinding.FragmentEditWordBinding
 
 class EditWordFragment : Fragment() {

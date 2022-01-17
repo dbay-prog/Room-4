@@ -2,7 +2,6 @@ package com.curso.android.myapplication.room_4
 
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -24,8 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        Log.d("TAG","Main Activity")
 
         val navView: BottomNavigationView = binding.navView
 

@@ -12,4 +12,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="item_text">Este es un texto muy largo que requiere de mucho espacion para poder entrar en una sola linea es por eso que se debe aumentar de tamanio</string>
+    <string name="main_dialogDelete_title">Eliminar Actividad</string>
+    <string name="main_dialogDelete_message">¿Estas seguro de que deseas eliminar las actividades de la fecha: %s?\nSe eliminará permanentemente.</string>
+    <string name="label_dialog_delete">Eliminar</string>
+    <string name="main_message_delete_success">Actividad eliminado correctamente.</string>
+    <string name="main_message_delete_fail">La actividad no ha sido eliminado correctamente.</string>
+    <string name="label_dialog_cancel">Cancelar</string>
 </resources>

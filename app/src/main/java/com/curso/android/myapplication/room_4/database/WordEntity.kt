@@ -1,10 +1,9 @@
-package com.curso.android.myapplication.room_2.database
+package com.curso.android.myapplication.room_4.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.sql.Date
-import java.sql.Timestamp
+
 
 @Entity(tableName = "word_table")
 data class WordEntity(

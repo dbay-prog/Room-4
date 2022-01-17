@@ -1,6 +1,7 @@
 package com.curso.android.myapplication.room_4.data
 
-import com.curso.android.myapplication.room_2.database.WordEntity
+import com.curso.android.myapplication.room_4.database.WordEntity
+
 
 class ListWords {
 

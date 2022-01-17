@@ -1,12 +1,12 @@
 package com.curso.android.myapplication.room_4.ui.home
 
+
 import androidx.lifecycle.*
-import com.curso.android.myapplication.room_2.database.WordEntity
-import com.curso.android.myapplication.room_2.repository.WordRepository
 import com.curso.android.myapplication.room_4.database.TaskEntity
+import com.curso.android.myapplication.room_4.database.WordEntity
+import com.curso.android.myapplication.room_4.repository.WordRepository
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
-import java.net.IDN
 
 class HomeViewModel(private val mRepository: WordRepository) : ViewModel() {
 
@@ -14,6 +14,10 @@ class HomeViewModel(private val mRepository: WordRepository) : ViewModel() {
 
     fun insert(word:WordEntity) = viewModelScope.launch{
         mRepository.insert(word)
+    }
+
+    fun deleteWord(fecha: String) = viewModelScope.launch {
+        mRepository.deleteWord(fecha)
     }
 
     val allTasks:LiveData<List<TaskEntity>> = mRepository.allTasks.asLiveData()

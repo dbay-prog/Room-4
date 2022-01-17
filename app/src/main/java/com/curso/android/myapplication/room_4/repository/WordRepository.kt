@@ -1,11 +1,12 @@
-package com.curso.android.myapplication.room_2.repository
+package com.curso.android.myapplication.room_4.repository
+
 
 import androidx.annotation.WorkerThread
-import androidx.lifecycle.MutableLiveData
-import com.curso.android.myapplication.room_2.database.WordDao
-import com.curso.android.myapplication.room_2.database.WordEntity
+import com.curso.android.myapplication.room_4.database.WordEntity
 import com.curso.android.myapplication.room_4.database.TaskDao
 import com.curso.android.myapplication.room_4.database.TaskEntity
+import com.curso.android.myapplication.room_4.database.WordDao
+
 import kotlinx.coroutines.flow.Flow
 // Declares the DAO as a private property in the constructor. Pass in the DAO
 // instead of the whole database, because you only need access to the DAO
@@ -19,6 +20,12 @@ class WordRepository(var wordDao: WordDao, var taskDao: TaskDao) {
     @WorkerThread
     suspend fun insert(word: WordEntity) {
         wordDao.insert(word)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun deleteWord(fecha: String) {
+        wordDao.deleteWord(fecha)
     }
 
 

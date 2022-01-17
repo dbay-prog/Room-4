@@ -1,14 +1,14 @@
-package com.curso.android.myapplication.room_2.adapter
+package com.curso.android.myapplication.room_4.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.curso.android.myapplication.room_2.database.WordEntity
+
 import com.curso.android.myapplication.room_4.R
+import com.curso.android.myapplication.room_4.database.WordEntity
 import com.curso.android.myapplication.room_4.databinding.ItemWordBinding
 import com.curso.android.myapplication.room_4.ui.home.OnItemClickListener
 

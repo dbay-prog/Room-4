@@ -11,13 +11,13 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.curso.android.myapplication.room_2.database.WordEntity
 import com.curso.android.myapplication.room_4.R
+import com.curso.android.myapplication.room_4.database.WordEntity
 import com.curso.android.myapplication.room_4.databinding.FragmentNewWordBinding
 import com.curso.android.myapplication.room_4.utils.DataPickerFragment
 import com.curso.android.myapplication.room_4.utils.GetDate
 import com.curso.android.myapplication.room_4.utils.InjectorUtils
-import org.koin.android.ext.android.bind
+
 
 
 class NewWordFragment : Fragment() {
@@ -29,7 +29,6 @@ class NewWordFragment : Fragment() {
 
 
 
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,30 +37,29 @@ class NewWordFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentNewWordBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         val factory = InjectorUtils.inyectarHomeViewModelFactory(this.requireContext())
         homeViewModel = ViewModelProvider(this,factory).get(HomeViewModel::class.java)
 
-        val getDate = GetDate()
-        binding.etDate.editText?.setText(getDate.newDate())
 
-        binding.tiData.setOnClickListener {
+
+        val getDate = GetDate()
+        binding.etDate.setText(getDate.newDate())
+
+        binding.etDate.setOnClickListener {
             showDatePinckerDialog()
         }
 
 
-
-
         binding.btnSave.setOnClickListener {
-            if (binding.etWord.editText?.text.isNullOrEmpty() ||
-                binding.etDate.editText?.text.isNullOrEmpty() ||
-                binding.etHoras.editText?.text.isNullOrEmpty()) {
+            if (binding.etWord.text.isNullOrEmpty() ||
+                binding.etDate.text.isNullOrEmpty() ||
+                binding.etHora.text.isNullOrEmpty()) {
                 Toast.makeText(requireActivity(), R.string.empty_not_saved,Toast.LENGTH_SHORT).show()
 
             }else {
-                val palabra = binding.etWord.editText?.text.toString()
-                val date = binding.etDate.editText?.text.toString()
-                val hours = binding.etHoras.editText?.text.toString()
+                val palabra = binding.etWord.text.toString()
+                val date = binding.etDate.text.toString()
+                val hours = binding.etHora.text.toString()
                 homeViewModel.insert(WordEntity(palabra, date, hours))
             }
 
@@ -81,7 +79,7 @@ class NewWordFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun onDateSelected(day: Int, month: Int, year: Int) {
-        binding.etDate.editText?.setText("$day/$month/$year")
+        binding.etDate.setText("$day/${month+1}/$year")
     }
 
 

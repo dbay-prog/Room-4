@@ -14,7 +14,7 @@ class GetDate {
 
         val hour = c.get(Calendar.HOUR_OF_DAY)
         val minute = c.get(Calendar.MINUTE)
-        val fechaActual = "$day/$month/$year"
+        val fechaActual = "$day/${month+1}/$year"
         return  fechaActual
 
     }

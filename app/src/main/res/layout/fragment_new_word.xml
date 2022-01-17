@@ -8,32 +8,31 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etDate"
+        android:id="@+id/tilDate"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:hint="Fecha: "
-        android:inputType="date"
-        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/ic_baseline_insert_invitation_24"
         android:layout_marginTop="60dp"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/etHoras"
+        app:layout_constraintEnd_toStartOf="@id/tilHoras"
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiData"
+            android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="time" />
+            android:hint="Fecha: "
+            android:focusableInTouchMode="false" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etHoras"
+        android:id="@+id/tilHoras"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -44,11 +43,11 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/etDate"
+        app:layout_constraintStart_toEndOf="@id/tilDate"
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiHora"
+            android:id="@+id/etHora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number" />
@@ -57,7 +56,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etWord"
+        android:id="@+id/tilWord"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
         app:endIconMode="clear_text"
@@ -71,15 +70,16 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etDate"
+        app:layout_constraintTop_toBottomOf="@id/tilDate"
         app:layout_constraintBottom_toTopOf="@+id/btnSave">
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiWord"
+            android:id="@+id/etWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textAutoComplete" />
+            android:inputType="textMultiLine"
+            android:maxLength="100"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,7 +93,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etWord"
+        app:layout_constraintTop_toBottomOf="@id/tilWord"
 
         />
 

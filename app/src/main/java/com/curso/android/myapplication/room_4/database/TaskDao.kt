@@ -2,7 +2,6 @@ package com.curso.android.myapplication.room_4.database
 
 import kotlinx.coroutines.flow.Flow
 import androidx.room.*
-import com.curso.android.myapplication.room_2.database.WordEntity
 
 @Dao
 interface TaskDao {

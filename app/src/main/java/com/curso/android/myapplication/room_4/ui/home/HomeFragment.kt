@@ -1,21 +1,33 @@
 package com.curso.android.myapplication.room_4.ui.home
 
+
+import android.content.Context
+import android.content.DialogInterface
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.curso.android.myapplication.room_2.adapter.WordListAdapter
-import com.curso.android.myapplication.room_2.database.WordEntity
+
+import com.curso.android.myapplication.room_4.R
+import com.curso.android.myapplication.room_4.adapter.WordListAdapter
+import com.curso.android.myapplication.room_4.database.WordEntity
 import com.curso.android.myapplication.room_4.databinding.FragmentHomeBinding
 import com.curso.android.myapplication.room_4.utils.InjectorUtils
+
 import java.lang.StringBuilder
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class HomeFragment : Fragment(), OnItemClickListener {
@@ -27,7 +39,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
     private lateinit var homeViewModel:HomeViewModel
     private lateinit var mRecyclerView: RecyclerView
-    private lateinit var mAdapter:WordListAdapter
+    private lateinit var mAdapter: WordListAdapter
 
 
     override fun onCreateView(
@@ -88,9 +100,39 @@ class HomeFragment : Fragment(), OnItemClickListener {
     }
 
     override fun onLongItemClick(word: WordEntity) {
-        Log.d("TAG", "Pulso Largo")
-        Toast.makeText(activity,word.fecha,Toast.LENGTH_SHORT).show()
+        val vibrator = activity?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(60, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            @Suppress("DEPRECATION")
+            vibrator.vibrate(60)
+        }
+
+        val builder = androidx.appcompat.app.AlertDialog.Builder(requireActivity())
+            .setTitle(R.string.main_dialogDelete_title)
+            .setMessage(String.format(Locale.ROOT, getString(R.string.main_dialogDelete_message),
+                word.fecha))
+            .setPositiveButton(R.string.label_dialog_delete) { dialogInterface: DialogInterface?, i: Int ->
+                try {
+
+                    Log.d("TAG","Elimar: ${word.fecha}")
+                    homeViewModel.deleteWord(word.fecha)
+                    //showMessage(R.string.main_message_delete_success)
+                    Toast.makeText(activity,R.string.main_message_delete_success,Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(activity,R.string.main_message_delete_fail,Toast.LENGTH_SHORT).show()
+                    //showMessage(R.string.main_message_delete_fail)
+                }
+            }
+            .setNegativeButton(R.string.label_dialog_cancel, null)
+        builder.show()
+
     }
+
+//    private fun showMessage(resource: Int) {
+//        Snackbar.make(containerMain!!, resource, Snackbar.LENGTH_SHORT).show()
+//    }
 
     override fun onResume() {
         super.onResume()
