@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 data class WordEntity(
     @PrimaryKey
     @ColumnInfo (name = "word") val word:String,
-    @ColumnInfo (name = "date") val fecha:String,
+    @ColumnInfo (name = "date") val fecha:Long,
     @ColumnInfo (name = "hours") val hours:String,
 
 )

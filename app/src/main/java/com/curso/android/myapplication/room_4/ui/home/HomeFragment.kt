@@ -81,7 +81,13 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
 
         binding.fab.setOnClickListener {
-            val action = HomeFragmentDirections.actionNavigationHomeToNewWordFragment()
+//            val dialogFragment = AddDialogFragment()
+//            val transaccion = fragmentManager?.beginTransaction()
+//            transaccion?.let {
+//                dialogFragment.show(it,AddDialogFragment.TAG)
+//            }
+
+        val action = HomeFragmentDirections.actionNavigationHomeToNewWordFragment()
             findNavController().navigate(action)
         }
 
@@ -95,7 +101,7 @@ class HomeFragment : Fragment(), OnItemClickListener {
 
     override fun onItemClick(word: WordEntity) {
         Log.d("TAG", "Pulso corto")
-        Toast.makeText(activity,word.fecha,Toast.LENGTH_SHORT).show()
+        //Toast.makeText(activity,word.fecha,Toast.LENGTH_SHORT).show()
 
     }
 

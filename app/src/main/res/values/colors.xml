@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    Material Theme Colors-->
+    <color name="color_primary">#37464f</color>
+    <color name="color_primary_variant">#101f27</color>
+
+    <color name="color_secondary">#f9a825</color>
+    <color name="color_secondary_variant">#c17900</color>
+
+    <!--    Colores de Texto, encima de los colores primarios-->
+    <color name="color_on_primary">@color/white</color>
+    <color name="color_on_secondary">@color/black</color>
+
+    <color name="color_background">#f5f5f5</color>
+    <color name="color_surface">@color/white</color>
+    <color name="color_error">#d50000</color>
+
+    <color name="color_on_background">@color/black</color>
+    <color name="color_on_surface">@color/black</color>
+    <color name="color_on_error">@color/white</color>
+
+
+    <color name="buttonLabel">#004c8c</color>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <color name="primaryColor">#37464f</color>
     <color name="primaryLightColor">#62717b</color>
     <color name="primaryDarkColor">#101f27</color>
@@ -9,7 +47,6 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
 
-    <color name="buttonLabel">#FFFFFF</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

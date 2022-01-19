@@ -16,7 +16,7 @@ class HomeViewModel(private val mRepository: WordRepository) : ViewModel() {
         mRepository.insert(word)
     }
 
-    fun deleteWord(fecha: String) = viewModelScope.launch {
+    fun deleteWord(fecha: Long) = viewModelScope.launch {
         mRepository.deleteWord(fecha)
     }
 

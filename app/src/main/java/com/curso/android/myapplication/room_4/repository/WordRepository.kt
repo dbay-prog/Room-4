@@ -24,7 +24,7 @@ class WordRepository(var wordDao: WordDao, var taskDao: TaskDao) {
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun deleteWord(fecha: String) {
+    suspend fun deleteWord(fecha: Long) {
         wordDao.deleteWord(fecha)
     }
 

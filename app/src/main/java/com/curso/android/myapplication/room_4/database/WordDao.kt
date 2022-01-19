@@ -14,5 +14,5 @@ interface WordDao{
     suspend fun deleteAll()
 
     @Query("DELETE FROM word_table WHERE date=:fecha")
-    suspend fun deleteWord(fecha:String)
+    suspend fun deleteWord(fecha:Long)
 }

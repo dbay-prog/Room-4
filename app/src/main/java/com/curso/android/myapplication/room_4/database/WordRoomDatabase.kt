@@ -22,7 +22,7 @@ abstract class WordRoomDatabase:RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     WordRoomDatabase::class.java,
-                    "wordDatabase4"
+                    "wordDatabase10"
                 ).build()
                 INSTANCE = instance
                 //return instance

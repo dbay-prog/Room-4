@@ -4,97 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/common_padding_default"
+    android:id="@+id/containerMain"
     tools:context=".ui.home.NewWordFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilDate"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="220dp"
+        android:id="@+id/tilFecha"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:hint="@string/hint_fecha"
+        android:layout_marginEnd="@dimen/common_paddin_min"
+        android:layout_marginBottom="@dimen/common_paddin_min"
         app:startIconDrawable="@drawable/ic_baseline_insert_invitation_24"
-        android:layout_marginTop="60dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tilHoras"
-        >
-
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etDate"
+            android:id="@+id/etFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fecha: "
             android:focusableInTouchMode="false" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilHoras"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Horas: "
-        android:inputType="number"
-        app:endIconMode="clear_text"
-        android:layout_marginTop="60dp"
+        android:hint="@string/hint_horas"
+        android:layout_marginBottom="@dimen/common_paddin_min"
+        android:layout_marginStart="@dimen/common_paddin_min"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tilDate"
-        app:layout_constraintEnd_toEndOf="parent">
-
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etHora"
+            android:id="@+id/etHoras"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="numberDecimal"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilWord"
-        android:layout_width="347dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-        android:fontFamily="sans-serif-light"
-        android:hint="@string/hint_word"
-        android:inputType="textAutoComplete"
-        android:textSize="18sp"
-        android:layout_marginTop="30dp"
+        android:hint="@string/hint_name"
+        android:layout_marginTop="@dimen/common_paddin_min"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilDate"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave">
-
-
+        app:layout_constraintTop_toBottomOf="@id/tilFecha">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:maxLength="100"/>
+            android:inputType="textNoSuggestions"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_description"
+        android:layout_marginTop="@dimen/common_paddin_min"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilWord">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions|textMultiLine"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSave"
-        style="@style/CustomButton"
-        android:text="@string/button_save"
-        android:layout_marginTop="45dp"
+        android:id="@+id/btnCancelar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_cancelar"
+        android:layout_marginEnd="@dimen/common_paddin_min"
+        android:layout_marginTop="@dimen/common_paddin_min"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilWord"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/tilDescription"/>
 
-        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAceptar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_aceptar"
+        android:layout_marginTop="@dimen/common_paddin_min"
+        android:layout_marginStart="@dimen/common_paddin_min"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilDescription"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

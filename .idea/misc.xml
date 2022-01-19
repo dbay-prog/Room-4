@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_dashboard.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_dialog_add.xml" value="0.1" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_new_word.xml" value="0.2540983606557377" />
+        <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_new_word.xml" value="0.4" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/item_activitys.xml" value="0.2421875" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/item_task.xml" value="0.264" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/layout/item_word.xml" value="0.30324074074074076" />
         <entry key="..\:/Android/Project/Room4/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2421875" />
